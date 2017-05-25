@@ -26,7 +26,8 @@ public class main {
                     backToMenu = direct.getStringOption();
                     break;
                 case 2:
-                    System.out.println("2, ok");
+                    direct.getName();
+                    direct.getNumber();
                     System.out.println("Back to menu? [y/n]");
                     backToMenu = direct.getStringOption();
                     break;

@@ -49,5 +49,16 @@ public class Directory {
         return input.next();
     }
 
+    public String getName(){
+        System.out.println("Enter Name");
+        String name = input.nextLine();
+        input.nextLine();
+        return name;
+    }
+    public int getNumber(){
+        System.out.println("Enter Number");
+        return input.nextInt();
+    }
+
 
 }
