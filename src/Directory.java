@@ -1,3 +1,6 @@
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 /**
@@ -8,6 +11,14 @@ public class Directory {
     String menu;
 
 
+//    String directory = "phone-book";
+//    String fileName = "contacts";
+//
+//    Path dataDirectory = Paths.get(directory);
+//    Path dataFile = Paths.get(directory, fileName);
+//
+//    if(Files.notExists())
+
     public String directory() {
         return "1. View Contacts \n" +
                 " 2. Add A new Contact\n" +
@@ -16,6 +27,12 @@ public class Directory {
                 " 5. Exit \n" +
                 "Enter options (1, 2, 3, 4, or 5)";
     }
+
+    public int getOpiton(){
+        return input.nextInt();
+    }
+
+
 
 
 }
