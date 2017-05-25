@@ -21,18 +21,20 @@ public class Directory {
 
     public String directory() {
         return "1. View Contacts \n" +
-                " 2. Add A new Contact\n" +
-                " 3. Search a contact by name \n " +
-                " 4. Delete an existing contact\n " +
-                " 5. Exit \n" +
+                "2. Add A new Contact\n" +
+                "3. Search a contact by name \n" +
+                "4. Delete an existing contact\n" +
+                "5. Exit \n" +
                 "Enter options (1, 2, 3, 4, or 5)";
     }
 
-    public int getOpiton(){
+    public int getIntOpiton() {
         return input.nextInt();
     }
 
-
+    public String getStringOption() {
+        return input.next();
+    }
 
 
 }
