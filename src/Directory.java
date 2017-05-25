@@ -1,3 +1,5 @@
+
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -11,13 +13,24 @@ public class Directory {
     String menu;
 
 
-//    String directory = "phone-book";
-//    String fileName = "contacts";
-//
-//    Path dataDirectory = Paths.get(directory);
-//    Path dataFile = Paths.get(directory, fileName);
-//
-//    if(Files.notExists())
+    String directory = "Phone Book";
+    String fileName = "contacts.txt";
+
+    Path dataDirectory = Paths.get(directory);
+    Path dataFile = Paths.get(directory, fileName);
+
+
+    public  void fileCreator() throws IOException {
+
+        if (Files.notExists(dataDirectory)) {
+            Files.createDirectories(dataDirectory);
+        }
+        if (! Files.exists(dataFile)) {
+            Files.createFile(dataFile);
+        }
+    }
+
+
 
     public String directory() {
         return "1. View Contacts \n" +

@@ -1,23 +1,27 @@
+import java.io.IOException;
+
 /**
  * Created by emilioalvarado on 5/25/17.
  */
 public class main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         Directory direct = new Directory();
-        System.out.println(direct.directory());
+
 
         String backToMenu;
 
-
+        direct.fileCreator();
 
         do {
+            System.out.println(direct.directory());
             int menuOption = direct.getIntOpiton();
 
             switch (menuOption) {
                 case 1:
-                    System.out.println("1, ok");
+                    System.out.println("Name  |  Phone NUmber\n"+
+                                       "-----------------------");
                     System.out.println("Back to menu? [y/n]");
                     backToMenu = direct.getStringOption();
                     break;
@@ -37,9 +41,7 @@ public class main {
                     backToMenu = direct.getStringOption();
                     break;
                 case 5:
-                    System.out.println("5, ok");
-                    System.out.println("Back to menu? [y/n]");
-                    backToMenu = direct.getStringOption();
+                    backToMenu = "end";
                     break;
                 default:
                     System.out.println("not an option");
@@ -47,6 +49,7 @@ public class main {
                     backToMenu = direct.getStringOption();
             }
         }while (backToMenu.equalsIgnoreCase("y"));
+        System.out.println("later");
 
     }
 
