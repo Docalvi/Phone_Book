@@ -3,6 +3,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -18,6 +21,8 @@ public class Directory {
 
     Path dataDirectory = Paths.get(directory);
     Path dataFile = Paths.get(directory, fileName);
+    List<String> data;
+
 
 
     public void fileCreator() throws IOException {
@@ -28,8 +33,26 @@ public class Directory {
         if (!Files.exists(dataFile)) {
             Files.createFile(dataFile);
         }
+        try{
+            data = Files.readAllLines(dataFile);
+
+        }catch(Exception e){
+            System.out.println("file does not exist.");
+        }
     }
 
+
+    public void addContact(String name, String number) {
+        data.add(name + " " + number);
+        try {
+            Files.write(
+                    dataFile,
+                    data
+            );
+        } catch (IOException e) {
+            System.out.println("error");
+        }
+    }
 
     public String directory() {
         return "1. View Contacts \n" +
@@ -50,14 +73,13 @@ public class Directory {
 
     public String getName() {
         System.out.println("Enter Name");
-        String name = input.nextLine();
-        input.nextLine();
+        String name = input.next();
         return name;
     }
 
-    public int getNumber() {
+    public String getNumber() {
         System.out.println("Enter Number");
-        return input.nextInt();
+        return input.next();
     }
 
 

@@ -26,8 +26,10 @@ public class main {
                     backToMenu = direct.getStringOption();
                     break;
                 case 2:
-                    direct.getName();
-                    direct.getNumber();
+                    String name = direct.getName();
+                    String number = direct.getNumber();
+                    direct.addContact(name, number);
+
                     System.out.println("Back to menu? [y/n]");
                     backToMenu = direct.getStringOption();
                     break;
