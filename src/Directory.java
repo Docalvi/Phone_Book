@@ -20,16 +20,15 @@ public class Directory {
     Path dataFile = Paths.get(directory, fileName);
 
 
-    public  void fileCreator() throws IOException {
+    public void fileCreator() throws IOException {
 
         if (Files.notExists(dataDirectory)) {
             Files.createDirectories(dataDirectory);
         }
-        if (! Files.exists(dataFile)) {
+        if (!Files.exists(dataFile)) {
             Files.createFile(dataFile);
         }
     }
-
 
 
     public String directory() {
@@ -49,13 +48,14 @@ public class Directory {
         return input.next();
     }
 
-    public String getName(){
+    public String getName() {
         System.out.println("Enter Name");
         String name = input.nextLine();
         input.nextLine();
         return name;
     }
-    public int getNumber(){
+
+    public int getNumber() {
         System.out.println("Enter Number");
         return input.nextInt();
     }
