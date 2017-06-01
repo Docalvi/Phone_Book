@@ -15,13 +15,16 @@ public class main {
         direct.fileCreator();
 
         do {
-            System.out.println(direct.directory());
+            System.out.println(direct.menu());
             int menuOption = direct.getIntOpiton();
 
             switch (menuOption) {
                 case 1:
                     System.out.println("Name  |  Phone NUmber\n"+
                                        "-----------------------");
+                    direct.showContacts();
+
+
                     System.out.println("Back to menu? [y/n]");
                     backToMenu = direct.getStringOption();
                     break;
@@ -35,11 +38,13 @@ public class main {
                     break;
                 case 3:
                     System.out.println("3, ok");
+                    direct.search();
                     System.out.println("Back to menu? [y/n]");
                     backToMenu = direct.getStringOption();
                     break;
                 case 4:
                     System.out.println("4, ok");
+                    direct.remove();
                     System.out.println("Back to menu? [y/n]");
                     backToMenu = direct.getStringOption();
                     break;
